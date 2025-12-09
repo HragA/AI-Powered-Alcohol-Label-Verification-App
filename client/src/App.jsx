@@ -17,6 +17,7 @@ function App() {
 	const [dragActive, setDragActive] = useState(false)
 
 	const API_ENDPOINT = import.meta.env.VITE_API_URL
+	const API_Secret_Key = import.meta.env.VITE_API_SECRET_KEY
 
 	const canSubmit = formData.brandName.trim() && formData.productClass.trim() && formData.alcoholContent.trim() && formData.netContents.trim() && Boolean(labelImage)
 
@@ -82,7 +83,7 @@ function App() {
 		try {
 			const response = await fetch(`${API_ENDPOINT}/api/submit-label`, {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
+				headers: { 'Content-Type': 'application/json', 'X-API-Key': API_Secret_Key },
 				body: JSON.stringify(payload),
 			})
 
