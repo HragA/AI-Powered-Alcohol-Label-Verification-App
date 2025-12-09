@@ -22,11 +22,11 @@ A full-stack web application that simulates a simplified version of the Alcohol 
 - OpenCV & EasyOCR for image processing
 - Flask-CORS for cross-origin requests
 
-## Installation
+## Installation & Run Locally
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- Python 3.8+
+- Python 3.9.6
 
 ### Frontend Setup (React + Vite)
 
@@ -74,11 +74,11 @@ Run the Flask server:
 python server.py
 ```
 
-The server will be available at [http://localhost:5000](http://localhost:5000)
+The server will be available at [http://localhost:5001](http://localhost:5001)
 
 ## Usage
 
-1. **Start both servers**: Ensure both the frontend (port 5173) and backend (port 5000) are running
+1. **Start both servers**: Ensure both the frontend (port 5173) and backend (port 5001) are running
 2. **Open the app**: Navigate to [http://localhost:5173](http://localhost:5173)
 3. **Fill out the form**:
    - Brand Name
@@ -138,7 +138,7 @@ The frontend needs to know your backend server URL:
 2. **Add your backend URL**:
    ```env
    # For local development
-   VITE_API_URL=http://127.0.0.1:5000
+   VITE_API_URL=http://127.0.0.1:5001
 
    # For production
    VITE_API_URL=https://your-backend-domain.com
@@ -162,7 +162,7 @@ The backend uses a `.env` file to configure allowed CORS origins. Before deployi
 3. **For cloud deployments** (Heroku, Railway, etc.), set the environment variable in your platform's dashboard instead of using the `.env` file
 
 **Development vs Production:**
-- **Frontend**: `VITE_API_URL=http://127.0.0.1:5000` (local) → `VITE_API_URL=https://your-backend.com` (production)
+- **Frontend**: `VITE_API_URL=http://127.0.0.1:5001` (local) → `VITE_API_URL=https://your-backend.com` (production)
 - **Backend**: `CORS_ORIGINS=*` (development) → `CORS_ORIGINS=https://your-frontend.com` (production)
 
 **Important:** Never commit `.env` files with production values to version control. Ensure `.env` is in your `.gitignore`
